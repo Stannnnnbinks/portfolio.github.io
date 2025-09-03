@@ -403,14 +403,4 @@ if (!window.CSS || !CSS.supports('scroll-behavior', 'smooth')) {
             }
         });
     });
-    // Attendre que le DOM soit complètement chargé
-document.addEventListener('DOMContentLoaded', function() {
-    // Ajouter un événement de clic sur le bouton pour télécharger le CV
-    document.getElementById('cv-download-btn').addEventListener('click', function() {
-        const link = document.createElement('a');
-        link.href = 'cv.pdf'; // Remplace avec le chemin réel vers ton fichier
-        link.download = 'cv.pdf'; // Nom du fichier lors du téléchargement
-        link.click(); // Déclenche le téléchargement
-    });
-});
 }
