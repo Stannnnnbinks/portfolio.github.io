@@ -151,45 +151,7 @@ function parallaxEffect() {
     });
 }
 
-// CV Download
-function handleCVDownload(e) {
-    e.preventDefault();
-    
-    // Simulate CV download
-    const button = e.target;
-    const originalText = button.textContent;
-    const originalIcon = button.querySelector('.download-icon').innerHTML;
-    
-    button.innerHTML = `
-        <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12,4V2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
-        </svg>
-        Téléchargement...
-    `;
-    button.disabled = true;
-    
-    setTimeout(() => {
-        button.innerHTML = `
-            <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
-            </svg>
-            CV téléchargé !
-        `;
-        
-        setTimeout(() => {
-            button.innerHTML = `
-                <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                </svg>
-                ${originalText.replace(/.*>/, '')}
-            `;
-            button.disabled = false;
-        }, 2000);
-    }, 1500);
-    
-    // In a real implementation, you would trigger the actual file download here
-    // For demo purposes, we're just simulating the download process
-}
+
 
 // Navbar background on scroll
 function updateNavbarBackground() {
@@ -307,10 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
         enhancedScrollEffects();
     }, { passive: true });
     
-    // Add CV download handler
-    if (cvDownloadBtn) {
-        cvDownloadBtn.addEventListener('click', handleCVDownload);
-    }
     
     // Add resize event listener
     window.addEventListener('resize', () => {
