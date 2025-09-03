@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baptiste - Portfolio UX/UI Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Baptiste</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Accueil</a>
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#skills" class="nav-link">Compétences</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-bg"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Salut, je suis</span>
+                    <span class="hero-name">Baptiste</span>
+                    <span class="hero-profession">Étudiant SIO en 1ère année </span>
+                </h1>
+                <p class="hero-description">
+                    Passionné par le développement logiciel et les technologies. J'acquiers des compétences en programmation, cybersécurité et administration de systèmes.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">À propos de moi</h2>
+                <p class="section-subtitle">Découvrez mon parcours et ma passion</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        Actuellement étudiant en BTS SIO (Services Informatiques aux Organisations), 
+                        je me spécialise dans l'apprentissage du développemment et du réseau.
+                    </p>
+                    <p class="about-paragraph">
+                        Ma passion pour la cybersécurité et la technologie me pousse à créer des solutions 
+                        innovantes qui allient esthétique moderne et fonctionnalité optimale.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Projets réalisés</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="1">0</span>
+                            <span class="stat-label">Années d'expérience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">% Satisfaction client</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <div class="about-card-content">
+                            <h3>Formation SIO</h3>
+                            <p>Spécialisation en développement et design d'applications</p>
+                            <div class="about-card-tech">
+                                <span class="tech-tag">Forensic</span>
+                                <span class="tech-tag">Développement Web</span>
+                                <span class="tech-tag">AV Evasion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mes Projets</h2>
+                <p class="section-subtitle">Une sélection de mes meilleures réalisations</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="Projet E-commerce">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Voir le projet</a>
+                                <a href="#" class="project-link">Code source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Projet 1</h3>
+                        <p class="project-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum felis et libero hendrerit, ac lacinia urna eleifend. Donec elementum iaculis congue..
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg" alt="Application mobile">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Voir le projet</a>
+                                <a href="#" class="project-link">Code source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Projet 2</h3>
+                        <p class="project-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum felis et libero hendrerit, ac lacinia urna eleifend. Donec elementum iaculis congue.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" alt="Design System">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Voir le projet</a>
+                                <a href="#" class="project-link">Code Source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Projet 3</h3>
+                        <p class="project-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum felis et libero hendrerit, ac lacinia urna eleifend. Donec elementum iaculis congue.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Sketch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg" alt="Dashboard Analytics">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">Voir le projet</a>
+                                <a href="#" class="project-link">Code source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Projet 4</h3>
+                        <p class="project-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum felis et libero hendrerit, ac lacinia urna eleifend. Donec elementum iaculis congue.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mes Compétences</h2>
+                <p class="section-subtitle">Technologies et outils que je maîtrise</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h3 class="category-title">Cybersécurité</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Pentesting WEB</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Forensic</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">AV Evasion</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Développement</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML/CSS</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Outils & Technologies</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Burp Suite/OWASP ZAP</span>
+                                    <span class="skill-percentage">87%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="87"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">WireShark</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git/Github</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-moi</h2>
+                <p class="section-subtitle">Discutons de votre prochain projet</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>baptistegaillard05@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+33 7 83 29 79 07</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Localisation</h4>
+                            <p>France</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-download-section">
+                    <div class="cv-card">
+                        <div class="cv-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <div class="cv-content">
+                            <h3>Mon CV</h3>
+                            <p>Téléchargez mon curriculum vitae pour découvrir mon parcours complet, mes expériences et mes compétences détaillées.</p>
+                            <div class="cv-details">
+                                <div class="cv-detail-item">
+                                    <span class="detail-label">Format:</span>
+                                    <span class="detail-value">PDF</span>
+                                </div>
+                                <div class="cv-detail-item">
+                                    <span class="detail-label">Taille:</span>
+                                    <span class="detail-value">2.3 MB</span>
+                                </div>
+                                <div class="cv-detail-item">
+                                    <span class="detail-label">Dernière mise à jour:</span>
+                                    <span class="detail-value">Janvier 2025</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-full cv-download-btn" id="cv-download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
+                                </svg>
+                                Télécharger mon CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Baptiste. Tous droits réservés.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="https://github.com/Stanbapt" class="social-link">GitHub</a>
+                    <a href="https://tryhackme.com/p/Stanbapt" class="social-link">TryHackMe</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
