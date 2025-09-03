@@ -99,7 +99,7 @@ function handleCVDownload(e) {
     
     // Télécharger le fichier CV depuis GitHub
     const link = document.createElement('a');
-    link.href = 'cv.pdf'; // Chemin relatif vers le fichier CV
+    link.href = 'https://raw.githubusercontent.com/Stannnnnbinks/portfolio.github.io/main/cv.pdf'; // Chemin relatif vers le fichier CV
     link.download = 'cv.pdf'; // Le fichier sera téléchargé sous ce nom
     link.click();
 }
