@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050507;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-cyan: #00f3ff;
+            --accent-purple: #bc13fe;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --code-bg: #0d0d12;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(188, 19, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0, 243, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 20%, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Sections */
+        section { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.02); }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        h2::before {
+            content: ''; display: block; width: 6px; height: 30px;
+            background: var(--accent-cyan); border-radius: 4px;
+        }
+        h2 span { color: var(--text-muted); font-weight: 300; margin-left: 10px; font-size: 1.2rem; }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        /* --- DESIGN CONFIGURATION --- */
+        .tool-row {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .tool-row { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        .tool-info h3 {
+            font-size: 1.6rem;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+        }
+        .tool-info p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .tool-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: white;
+            border: 1px solid var(--glass-border);
+            margin-right: 5px;
+        }
+
+        /* Terminal Config */
+        .config-terminal {
+            background: var(--code-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+        .terminal-title { margin-left: auto; color: #555; font-size: 0.7rem; }
+
+        .code-line {
+            display: block;
+            margin-bottom: 6px;
+            color: #a9b7c6;
+            line-height: 1.5;
+        }
+        .key { color: var(--accent-purple); }
+        .string { color: #a5e075; }
+        .bool { color: var(--accent-cyan); }
+        .comment { color: #5c6370; font-style: italic; display: block; margin-top: 5px;}
+
+        /* --- TABLEAU --- */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th {
+            background: rgba(255,255,255,0.03);
+            text-align: left; padding: 18px 25px;
+            color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        td { padding: 20px 25px; border-top: 1px solid var(--glass-border); color: var(--text-muted); }
+        tr:hover td { background: rgba(255,255,255,0.02); color: white; }
+        
+        .tag { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .tag-hw { color: #eebbff; background: rgba(188, 19, 254, 0.15); }
+        .tag-algo { color: #afffff; background: rgba(0, 243, 255, 0.15); }
+        .tag-sec { color: #ffffff; background: rgba(255, 255, 255, 0.15); }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div style="margin-bottom: 30px; position: relative;">
+                <div style="position: absolute; top:0; left:0; right:0; bottom:0; background:var(--accent-cyan); filter:blur(40px); opacity:0.2;"></div>
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                    <path d="M2 12h20"></path>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </div>
+            <h1>Informatique Quantique</h1>
+            <p class="subtitle">Veille Technologique - Baptiste Gaillard</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <div class="glass-card reveal">
+                <h2>01. Le Sujet <span>/ Scope</span></h2>
+                <p style="font-size: 1.1rem; line-height: 1.7;">
+                    L'informatique quantique n'est plus une théorie, c'est une course à l'ingénierie.
+                    Cette veille a pour but de filtrer le "Hype" pour se concentrer sur les avancées réelles :
+                    la stabilisation des <strong>Qubits</strong>, l'optimisation des <strong>Algorithmes</strong> (Shor, Grover) 
+                    et la transition vers la <strong>Cryptographie Post-Quantique</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal">
+                <h2>02. Stack & Configuration <span>/ Monitoring</span></h2>
+                
+                <div class="tool-row">
+                    <div class="tool-info">
+                        <h3>Syft Mobile App</h3>
+                        <p>Application de curation d'actualités permettant de filtrer le bruit médiatique. Utilisée pour suivre les impacts sociétaux et économiques.</p>
+                        <span class="tool-badge">Curation AI</span>
+                        <span class="tool-badge">Mobilité</span>
+                    </div>
+                    <div class="config-terminal">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                            <div class="terminal-title">syft_prefs.yaml</div>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-line"><span class="key">sources_sures</span>:</span>
+                            <span class="code-line">  - <span class="string">"Le Monde / Sciences"</span></span>
+                            <span class="code-line">  - <span class="string">"Les Echos / Deeptech"</span></span>
+                            <span class="code-line">  - <span class="string">"Mediapart / Souveraineté"</span></span>
+                            <span class="code-line"><span class="key">doit_contenir</span>: [<span class="string">"Quantique"</span>, <span class="string">"Quantum Advance"</span>, <span class="string">"Quantum"</span>]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-row">
+                    <div class="tool-info">
+                        <h3>Google Alerts</h3>
+                        <p>Système d'alerte configuré selon vos paramètres spécifiques pour ne remonter que l'essentiel quotidiennement.</p>
+                        <span class="tool-badge">Monitoring</span>
+                        <span class="tool-badge">Filtrage strict</span>
+                    </div>
+                    <div class="config-terminal">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                            <div class="terminal-title">alerts_config.json</div>
+                        </div>
+                        <div class="code-content">
+                            <span class="comment">// Configuration exportée</span>
+                            <span class="code-line">{</span>
+                            <span class="code-line">  <span class="key">"frequence"</span>: <span class="string">"Une fois par jour maximum"</span>,</span>
+                            <span class="code-line">  <span class="key">"sources"</span>: <span class="string">"Automatique"</span>,</span>
+                            <span class="code-line">  <span class="key">"langue"</span>: <span class="string">"français"</span>,</span>
+                            <span class="code-line">  <span class="key">"region"</span>: <span class="string">"Toutes les régions"</span>,</span>
+                            <span class="code-line">  <span class="key">"nombre_resultats"</span>: <span class="string">"Seulement les meilleurs résultats"</span></span>
+                            <span class="code-line">}</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="tool-row">
+                    <div class="tool-info">
+                        <h3>Obsidian</h3>
+                        <p>Base de connaissance (Second Brain). Utilisation de la méthode Zettelkasten pour lier les nouvelles découvertes aux concepts fondamentaux.</p>
+                        <span class="tool-badge">Traitement</span>
+                        <span class="tool-badge">Analyse</span>
+                    </div>
+                    <div class="config-terminal">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                            <div class="terminal-title">vault_structure.md</div>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-line"><span class="key"># Structure des Tags</span></span>
+                            <span class="code-line">- #veille/quantique/2025</span>
+                            <span class="code-line">- #hardware/<span class="string">superconducting</span></span>
+                            <span class="code-line">- #algo/<span class="string">shor</span></span>
+                            <br>
+                            <span class="code-line"><span class="key">Plugin</span>: Dataview</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal">
+                <h2>03. Historique <span>/ Timeline</span></h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th style="width: 50%;">Sujet & Titre</th>
+                                <th>Catégorie</th>
+                                <th>Source</th>
+                            </tr>
+                        </thead>
+                        <tbody id="watch-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // DATA RECENTE 2025
+        const watchData = [
+            { date: "24 Nov 2025", title: "Pasqal déploie le premier ordinateur quantique d'Arabie Saoudite (200 qubits à atomes neutres)", cat: "Hardware", type: "tag-hw", source: "Aramco News" },
+            { date: "23 Nov 2025", title: "Nouveau record de cohérence : Princeton stabilise un qubit supraconducteur plus de 1ms", cat: "R&D", type: "tag-hw", source: "SciTechDaily" },
+            { date: "20 Nov 2025", title: "Alliance IBM & Cisco pour créer l'architecture de l'internet quantique distribué", cat: "Infrastructure", type: "tag-algo", source: "IBM Newsroom" },
+            { date: "18 Nov 2025", title: "NTT & OptQC visent 1 million de qubits optiques d'ici 2030 avec un nouveau partenariat", cat: "Business", type: "tag-sec", source: "NTT Group" },
+            { date: "14 Nov 2025", title: "Google dévoile 'Quantum Echoes' : une accélération x13,000 face aux supercalculateurs classiques", cat: "Algo", type: "tag-algo", source: "Google Research" },
+        ];
+
+        // RENDER TABLE
+        const tableBody = document.getElementById('watch-table-body');
+        watchData.forEach(item => {
+            const row = `
+                <tr>
+                    <td style="font-family:'JetBrains Mono', monospace; font-size:0.8rem; white-space:nowrap;">${item.date}</td>
+                    <td style="color: white; font-weight:500; line-height:1.5">${item.title}</td>
+                    <td><span class="tag ${item.type}">${item.cat}</span></td>
+                    <td>${item.source}</td>
+                </tr>
+            `;
+            tableBody.innerHTML += row;
+        });
+
+        // ANIMATION SCROLL
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 100;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        reveal();
+    </script>
+</body>
+</html>
